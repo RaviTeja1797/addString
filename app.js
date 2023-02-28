@@ -1,9 +1,10 @@
 const express = require("express");
-const app = express();
+const expressInstance = express();
 
+expressInstance.get("/", (request, response) => {
+  response.send("Express JS");
+});
 
-app.get('/', (request, response)=>{
-    response.send('Express JS')
-})
+expressInstance.listen(3000);
 
-app.listen(3000)
+module.exports = expressInstance;
